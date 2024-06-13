@@ -1,54 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Disaster Response and Relief Coordination</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    
-    <main>
-        <nav>
-            <ul>
-                <li><button id="b1"><a href="index.html">Home</a></button></li>
-                <li><button id="b2"><a href="about.html" class="active">About Us</a></button></li>
-                <li><button><a href="services.html">Services</a></button></li>
-            </ul>
-        </nav>
-          <h1 id="title">About Us</h1>
-            <div class="about-us">
-               <div><h2>Our Mission</h2>
-                <p style="font-weight: bold; font-size:larger;">We facilitate communities to respond to humanitarian<br> emergencies to alleviate human suffering and work<br> with partners to implement innovative community driven <br>programmes that transform lives and enhance community<br> resilience.</p>
-                <br>
-                <br>
-                <br>
-                <div><h2>Our Core Values</h2>
-                    <p style="font-weight: bold; font-size: larger;">1.Service to humanity<br>
-                        2.Accountability<br>
-                        3.Community Center<br>
-                        4.Inclusivity<br>
-                        5.Innovation<br></span>
-                        <br>
-                    </p></div> </div> 
-                          
-                <img id="t" src="t.jpg" alt="t">
-        </div>
-        <center>
-        <div><h1 style="color: white;">Our Vision</h1></div>
-        <div style="font-size: x-large; font-weight: bold;"><p style="color: white;">To be a <span style="color:#241571;">leading humanitarian organization</span> sustainably promoting the <span style="color: #241571;">well-being, health and resilience</span> of communities.</p>
-        </div>
-        </center>
-                
-        <section class="about-them">
-            <div>
-              
-                <h1 style="color: white;">Contact us</h1>
-                <p>Phone: +254 722 123456</p>
-                <p>Email: [info@disasterresponse.org](mailto:info@disasterresponse)</p>
-                    <p>Address: P.O Box 12345-00100 Nairobi, Kenya</p>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Hope Bridge Kenya </title>
+        <link rel="stylesheet" href="homepagestyle.css">
+    </head>
+    <body>
+        <header>
+            <img src="C:\Users\cheru\OneDrive\Desktop\Webdev project\HOPE BRIDGE LOGO.png" class="main">
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="aboutUs.html">About us</a>
+                    <a href="#">Resources</a>
+                    <a href="#">Preparedness</a>
+                    <a href="#">Donate</a>
+                </div>
             </div>
-            </section>
-    </main>
-   
-</body> 
+        </header>
+        <section class="home">
+            <video class="video-slide active" src="C:\Users\cheru\Downloads\18153515-hd_1920_1080_25fps.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="C:\Users\cheru\Downloads\4314676-hd_1920_1080_25fps.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="C:\Users\cheru\Downloads\7525398-hd_1920_1080_25fps.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="C:\Users\cheru\Downloads\9653705-hd_1920_1080_25fps.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="C:\Users\cheru\Downloads\6646718-hd_1920_1080_24fps.mp4" autoplay muted loop></video>
+            
+            <div class="content active">
+                <h1>Disaster <br>Response</h1>
+                <p>Efficient coordination between disaster relief resources and affected communities. <br>
+                    Get all the information you need on specific disasters in one location.
+                    with you help, we strive to be able to quickly and effectively help those impacted by tragedies.  </p>
+                    <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Clean Water <br>
+                    And Food Aid</h1>
+                <p>About a 33 children die of hunger per minute in Kenya. <br>
+                 Hope Bridge sets out to help the families settled in famine stricken-lands in Noerthern Kenya. 
+                There we work to ensure that such communities have access to a borehole and delivered food aid.</p>
+                    <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Fostering <br>Community </h1>
+                <p> Members of the community are vital to the rescue efforts, healthy recovery and <br>information updates that Hope Bridge relies on. 
+                Therefore, we greatly encourage a sense of togetherness and family in the society.</p>
+                    <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Education <br> Initiatives</h1>
+                <p>The first step in disaster preparedness and tragedy prevention is education. <br> We also visit rural schools that are severely stricken by poverty and lack proper sanitation. <br>
+                There we dig boreholes and give children a healthy and conducive learning environment.    </p>
+                    <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Donate <br>and Volunteer</h1>
+                <p>We need your help! As a non-profit organization, we need all the help we can get! 
+                    Help the members of your community by volunteering at any of our centers, <br>donating whatever extra you don't need or giving us any useful information that may help someone. </p>
+                    <a href="#">Read More</a>
+            </div>
+            
+            <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+        </section>
+        <script>
+            const btns = document.querySelectorAll(".nav-btn");
+            const slides = document.querySelectorAll(".video-slide");
+            const contents = document.querySelectorAll(".content");
+            
+            var sliderNav = function(manual){
+                btns.forEach((btn) => {
+                    btn.classList.remove("active")
+                });
+                slides.forEach((slide) => {
+                    slide.classList.remove("active")
+                });
+                contents.forEach((content) => {
+                    content.classList.remove("active")
+                });
+               btns[manual].classList.add("active");
+               slides[manual].classList.add("active");
+               contents[manual].classList.add("active");
+            }
+               btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    sliderNav(i);
+                });
+            });
+            
+        </script>
+    </body>
+</html>
