@@ -1,4 +1,4 @@
-/* Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Lato', Arial, sans-serif;
-    line-height: 1.6; /* Improve readability */
+    line-height: 1.6; 
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@ body {
     background-repeat: no-repeat;
 }
 
-/* @font-face for custom fonts */
+
 @font-face {
     font-family: 'Lato';
     src: url('Fonts/Lato/Lato-Regular.ttf') format('truetype');
@@ -32,7 +32,7 @@ body {
     font-style: normal;
 }
 
-/* Header Styles */
+
 .header {
     width: 100%;
     padding: 1em;
@@ -46,7 +46,7 @@ body {
     z-index: 10;
 }
 
-/* Container Styles */
+
 .container {
     max-width: 1200px;
     width: 100%;
@@ -55,12 +55,12 @@ body {
     align-items: center;
 }
 
-/* Logo Styles */
+
 .logo {
     max-width: 150px;
 }
 
-/* Navigation Links Styles */
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -76,14 +76,14 @@ body {
     color: #fff;
     text-decoration: none;
     font-size: 1em;
-    transition: color 0.3s; /* Smooth transition for hover effect */
+    transition: color 0.3s; 
 }
 
 .nav-links a:hover {
-    color: #241571; /* Changed link color on hover to berry */
+    color: #241571; 
 }
 
-/* Card Styles */
+
 .card {
     width: 300px;
     background-color: #4158D0;
@@ -156,7 +156,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-/* Footer Styles */
+
 .footer {
     background: #241571;
     color: #fff;
