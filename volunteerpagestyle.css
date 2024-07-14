@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +7,8 @@
 body {
     font-family: 'Lato', Arial, sans-serif;
     line-height: 1.6; 
+    margin-bottom: 80px;
 }
-
 
 @font-face {
     font-family: 'Lato';
@@ -25,63 +24,90 @@ body {
     font-style: normal;
 }
 
-
-.header {
-    min-height: 100vh;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('Images/Volunteer.jpeg');
-    background-position: center;
-    background-size: cover;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    text-align: center;
-}
-
-.navbar {
+header {
+    z-index: 999;
+    position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 1em;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 10px;
+    transition: 0.5s ease;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-.logo {
-    font-size: 1.5em;
-    color: #fff;
-    text-decoration: none;
+header .main {
+    width: 200px; /* Adjust the width of the logo */
+    height: 70px; /* Maintain aspect ratio */
 }
 
+header .navigation {
+    position: relative;
+    padding: 20px 1em;
+}
 
-.nav-links {
+header .navigation .navigation-items {
     list-style: none;
     display: flex;
+    align-items: center;
 }
 
-.nav-links li {
-    margin: 0 1em;
+header .navigation .navigation-items li {
+    margin: 0 10px;
 }
 
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
+header .navigation .navigation-items a {
+    background: transparent;
+    border: none;
+    padding: 1em 1.5em;
+    color: #000;
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
     font-size: 1em;
-    transition: color 0.3s; 
+    text-decoration: none;
 }
 
-.nav-links a:hover {
-    color: #241571; 
+header .navigation .navigation-items a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #000;
+    transition: width 0.5s ease;
 }
 
+header .navigation .navigation-items a:hover {
+    color: #F0F8FF;
+    transition-delay: 0.5s;
+}
+
+header .navigation .navigation-items a:hover::before {
+    width: 100%;
+}
+
+header .navigation .navigation-items a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #241571;
+    transition: height 0.4s ease;
+    z-index: -1;
+}
+
+header .navigation .navigation-items a:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: #fff;
+}
 
 .header-content {
     max-width: 600px;
@@ -115,7 +141,6 @@ body {
     background: #241571; 
 }
 
-
 .main-content {
     padding: 2em 1em;
     background: #f4f4f4;
@@ -143,29 +168,62 @@ body {
     margin-left: 1.5em;
 }
 
-
-.footer {
+.footer-volunteerpage {
     background: #241571;
     color: #fff;
-    padding: 1em 0;
-    text-align: center;
+    padding: 20px 80px;
     font-family: 'Lato', sans-serif;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.footer-volunteerpage .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 
+.footer-volunteerpage .item {
+    flex: 1;
+    text-align: center;
+    padding: 0 1em;
+}
+
+.background-image {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('Images/Volunteer.jpeg');
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 @media (max-width: 768px) {
-    .navbar {
+    header {
         flex-direction: column;
     }
 
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
+    header .navigation {
+        margin-top: 10px;
     }
 
-    .nav-links li {
-        margin: 0.5em 0;
+    header .navigation .navigation-items {
+        flex-direction: column;
+    }
+
+    header .navigation .navigation-items li {
+        margin: 5px 0;
     }
 
     .header-content h1 {
@@ -176,4 +234,3 @@ body {
         font-size: 1em;
     }
 }
-
