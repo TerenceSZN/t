@@ -8,6 +8,7 @@ body {
     font-family: 'Lato', Arial, sans-serif;
     line-height: 1.6; 
     margin-bottom: 80px;
+    scroll-behavior: smooth;
 }
 
 @font-face {
@@ -37,6 +38,7 @@ header {
     transition: 0.5s ease;
     font-weight: 500;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #fff;  
 }
 
 header .main {
@@ -149,6 +151,9 @@ header .navigation .navigation-items a:hover::after {
 .about, .requirements {
     max-width: 800px;
     margin: 2em auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6 ease-out, transform 0.6s ease-out;
 }
 
 .about h2, .requirements h2 {
@@ -208,6 +213,38 @@ header .navigation .navigation-items a:hover::after {
     align-items: center;
     text-align: center;
 }
+
+#scrollToTopButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #241571;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease;
+}
+
+#scrollToTopButton:hover {
+    background-color: #3B49B1;
+}
+
+/* Animation for content sections */
+.main-content section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.main-content section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 @media (max-width: 768px) {
     header {
