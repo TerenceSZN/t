@@ -6,27 +6,27 @@
     <title>Volunteer - Hope Bridge Kenya</title>
     <link rel="stylesheet" href="volunteerpagestyle.css">
 </head>
+
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <!---<a href="#" class="logo">Kenya Red Cross</a>--->
-                <img src="Images/HOPE BRIDGE LOGO.png" class="logo">
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Preparedness</a></li>
-                    <li><a href="#">Donate</a></li>
-                </ul>
-            </div>
+    <header>
+        <img src="Images/HOPE BRIDGE LOGO.png" class="main">
+        <nav class="navigation">
+            <ul class="navigation-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutUs.html">About us</a></li>
+                <li><a href="prep.html">Preparedness</a></li>
+                <li><a href="donate.html">Donate</a></li>
+            </ul>
         </nav>
+    </header>
+    <div class="background-image">
         <div class="header-content">
             <h1>Volunteer with Us</h1>
             <p>Join us in helping make a difference in the community</p>
             <a href="signuppage.html" class="btn">Sign Up</a>
         </div>
-    </header>
-    <main class="main-content">
+    </div>
+    <div class="main-content">
         <section class="about">
             <h2>About Volunteering</h2>
             <p>Hope Bridge Kenya focuses on aiding those in need and is always on the lookout for like-minded individuals.</p>
@@ -41,13 +41,55 @@
                 <li>Honor the rights, beliefs, and opinions of those we serve.</li>
             </ul>
         </section>
-    </main>
-    <footer class="footer">
+    </div>
+    <footer class="footer-volunteerpage">
         <div class="container">
-            <p>Contact Us: info@hopebridge.or.ke | (+254) 700 000 000</p>
-            <p>Address: Parklands, Limuru Road, Nairobi, Kenya</p>
-            <p>&copy; 2024 Hope Bridge Kenya. All Rights Reserved.</p>
+            <div class="item">254 Madaraka Avenue, Nairobi, Kenya | Phone: 0722 12345 | Email: info@hopebridge.org</div>
+            <div class="item">Address: P.O Box 12345-00100 Nairobi, Kenya</div>
+            <div class="item">&copy; 2024 Hope Bridge Kenya. All Rights Reserved.</div>
         </div>
     </footer>
+
+    <button id="scrollToTopButton" onclick="scrollToTop()">Top</button>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.navigation-items a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    
+        // Scroll-to-top button functionality
+        window.addEventListener('scroll', function() {
+            const scrollToTopButton = document.getElementById('scrollToTopButton');
+            if (window.scrollY > 300) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        });
+    
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    
+        // Content animations on scroll
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        document.querySelectorAll('.main-content section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
