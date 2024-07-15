@@ -3,11 +3,87 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    color: #241571;
+    color: #000000;
 }
 
 
-
+header{
+    z-index: 999;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding:  10px 10px;
+    transition: 0.5s ease;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    header .main{
+    width: 200px;
+    height:70px
+    }
+    
+    header .navigation{ 
+        position: relative;
+        padding: 20px 1em;
+    }
+    
+    header .navigation .navigation-items a{
+    
+        background: transparent;
+        border: none;
+        padding: 1em 1.5em;
+        color: #000;
+        position: relative;
+        transition: 0.5s ease;
+        cursor: pointer;
+        font-size: 1em;
+        text-decoration: none;
+        
+    
+    }
+    
+    header .navigation .navigation-items a::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background-color: #000;
+        transition: 0.5s ease;
+    }
+          
+    header .navigation .navigation-items a:hover {
+        color: #F0F8FF;
+        transition-delay: 0.5s;
+    }
+          
+    header .navigation .navigation-items a:hover::before {
+            width: 100%;
+          }
+          
+    header .navigation .navigation-items a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 0;
+            width: 100%;
+            background-color: #241571;
+            transition: 0.4s ease;
+            z-index: -1;
+          }
+          
+    header .navigation .navigation-items a:hover::after {
+            height: 100%;
+            transition-delay: 0.4s;
+            color: #fff;
+          }
+          
 .container {
     max-width: 2000px;
     margin: 0 auto;
@@ -17,7 +93,7 @@ body {
 }
 
 
-header {
+.headerPic {
     position: relative;
     height: 565px;
     background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu7gNo4LEHywdIfFTm0qEUvIQBUFD6upUlIQ&s') no-repeat center center/cover;
@@ -85,7 +161,7 @@ header {
 
 #heading {
     width: 100%;
-    background-color: #24157179;
+    background-color: #00000079;
 }
 
 header h1 {
@@ -111,15 +187,13 @@ header h1 {
 article,
 section {
     padding: 20px;
-    border: 1px solid #241571;
-    border-radius: 8px;
     background-color: #f5f5ff;
 }
 
 article h2,
 section h3 {
     margin-top: 0;
-    color: #241571;
+    color: #000000;
 }
 
 ul {
@@ -133,7 +207,7 @@ li {
 
 a {
     text-decoration: none;
-    color: #241571;
+    color: #000000;
     font-weight: bold;
 }
 
@@ -152,4 +226,17 @@ a:hover {
 .img{
     width: 200px;
     border-radius: 5%
+}
+.footer{
+    width: 100%;
+    min-height: 150px;
+    padding: 20px 80px;
+    margin: 0;
+    background: #241571;
+    text-align: center;
+}
+.footer p{
+    color: whitesmoke;
+    margin: 20px auto;
+
 }
