@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Volunteer | Hope Bridge Kenya</title>
+    <link rel="stylesheet" href="signuppagestyle.css">
+</head>
+<body>
+   <header>
+        <img src="Images/HOPE BRIDGE LOGO.png" class="main">
+        <nav class="navigation">
+            <div class="container-signuppage">
+                <ul class="navigation-items">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="volunteerpage.html">Volunteer</a></li>
+                    <li><a href="prep.html">Preparedness</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="card">
+        <p class="heading">Sign Up</p>
+        
+        <div class="input-div">
+            <input type="text" class="input" id="email" placeholder="Email">
+        </div>
+        <div class="input-div">
+            <input class="input" type="text" id="phone" placeholder="Phone">
+        </div>
+        <div class="input-div">
+            <input class="input" type="text" id="message" placeholder="Message (Optional)">
+        </div>
+        <div class="button-div">
+            <button class="submit" onclick="submitForm()">Submit</button>
+        </div>
+        <div id="formMessage" style="margin-top: 1rem; color: green;"></div>
+    </div>
+    <footer class="footer-volunteerpage">
+        <div class="container">
+            <div class="item">254 Madaraka Avenue, Nairobi, Kenya | Phone: 0722 12345 | Email: info@hopebridge.org</div>
+            <div class="item">Address: P.O Box 12345-00100 Nairobi, Kenya</div>
+            <div class="item">&copy; 2024 Hope Bridge Kenya. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+   
+    <script>
+        function submitForm() {
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            let formMessage = document.getElementById('formMessage');
+
+            // Clear previous messages
+            formMessage.textContent = '';
+            formMessage.style.color = 'green';
+
+            // Validation
+            if (!validateEmail(email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.style.color = 'red';
+                return;
+            }
+
+            if (!validatePhone(phone)) {
+                formMessage.textContent = 'Please enter a valid phone number.';
+                formMessage.style.color = 'red';
+                return;
+            }
+
+            // If validation passes
+            formMessage.textContent = 'Thank you for signing up! We will contact you soon.';
+
+            // Clear input fields
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('message').value = '';
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function validatePhone(phone) {
+            const re = /^\d{10}$/;
+            return re.test(phone);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.input');
+
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.boxShadow = '0 0 5px rgba(81, 203, 238, 1)';
+                });
+
+                input.addEventListener('blur', function() {
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

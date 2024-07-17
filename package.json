@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "signuppage",
+=======
+  "name": "my-app",
+>>>>>>> 3276876ef131051f469f6280a9dccf15997cd46a
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +13,10 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
+<<<<<<< HEAD
+=======
+    "swiper": "^11.1.5",
+>>>>>>> 3276876ef131051f469f6280a9dccf15997cd46a
     "web-vitals": "^2.1.4"
   },
   "scripts": {
