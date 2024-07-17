@@ -3,6 +3,7 @@ import './App.css';
 import logo from './Images/HOPE BRIDGE LOGO.png';
 import backgroundImage from './Images/Volunteer.jpeg';
 
+
 const VolunteerPage = () => {
     useEffect(() => {
         // Smooth scrolling for navigation links
