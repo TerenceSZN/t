@@ -11,9 +11,9 @@ function Prep() {
         />
         <div className="navigation">
           <div className="navigation-items">
+            <a href="index.html">Home</a>
             <a href="aboutUs.html">About us</a>
             <a href="volunteerpage2.html">Volunteer</a>
-            <a href="prep.html">Preparedness</a>
             <a href="donate.html">Donate</a>
           </div>
         </div>
