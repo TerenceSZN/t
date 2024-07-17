@@ -207,7 +207,7 @@ section {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: url("public/Images/cardbackground2.jpg");
+    background: url("Images/cardbackground2.jpg");
 }
 
 .card-list .card-item {
