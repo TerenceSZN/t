@@ -1,14 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import Prep from './components/prep';
+import React from 'react';
+import AboutUs from './components/aboutus';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
-function App() {
+
+const App = () => {
   return (
-    <>
-      <Prep />
-    
-    </>
+    <div>
+      <Navigation />
+      <AboutUs />
+      <Footer />
+    </div>
   );
-}
+};
 
 export default App;
