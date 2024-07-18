@@ -1,5 +1,125 @@
-.App {
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  line-height: 1.6; 
+  margin-bottom: 80px;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('Fonts/Lato/Lato-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('Fonts/Lato/Lato-Black.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+header {
+  z-index: 999;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  transition: 0.5s ease;
+  font-weight: 500;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #fff;  
+}
+
+header .main {
+  width: 200px; /* Adjust the width of the logo */
+  height: 70px; /* Maintain aspect ratio */
+}
+
+header .navigation {
+  position: relative;
+  padding: 20px 1em;
+}
+
+header .navigation .navigation-items {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+header .navigation .navigation-items li {
+  margin: 0 10px;
+}
+
+header .navigation .navigation-items a {
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #000;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+header .navigation .navigation-items a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #000;
+  transition: width 0.5s ease;
+}
+
+header .navigation .navigation-items a:hover {
+  color: #F0F8FF;
+  transition-delay: 0.5s;
+}
+
+header .navigation .navigation-items a:hover::before {
+  width: 100%;
+}
+
+header .navigation .navigation-items a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #241571;
+  transition: height 0.4s ease;
+  z-index: -1;
+}
+
+header .navigation .navigation-items a:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: #fff;
+}
+
+.header-content {
+  max-width: 600px;
+  margin-top: 5em;
   text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -7,32 +127,162 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.about, .requirements {
+  max-width: 800px;
+  margin: 2em auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6 ease-out, transform 0.6s ease-out;
 }
 
-.App-header {
-  background-color: #282c34;
+.about h2, .requirements h2 {
+  margin-bottom: 1em;
+  font-size: 2em;
+  font-family: 'Lato', sans-serif;
+}
+
+.about p, .requirements ul {
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: 'Lato', sans-serif;
+}
+
+.requirements ul {
+  list-style: disc;
+  margin-left: 1.5em;
+}
+
+.footer-volunteerpage {
+  background: #241571;
+  color: #fff;
+  padding: 20px 80px;
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-volunteerpage .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-volunteerpage .item {
+  flex: 1;
+  text-align: center;
+  padding: 0 1em;
+}
+
+.background-image {
   min-height: 100vh;
+  /* background-image: linear-gradient(rgba(4, 9, 30, 1), rgba(4, 9, 30, 1)), url('Images/Volunteer.jpeg'); */
+  background-image: linear-gradient(rgba(4, 9, 30, 1), rgba(4, 9, 30, 1));
+  background-image: url('Images/Volunteer.jpeg');
+  background-position: center;
+  background-size: cover;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: center;
+}
+
+#scrollToTopButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #241571;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+#scrollToTopButton:hover {
+  background-color: #3B49B1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Animation for content sections */
+.main-content section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.main-content section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  header .navigation {
+      margin-top: 10px;
   }
+
+  header .navigation .navigation-items {
+      flex-direction: column;
+  }
+
+  header .navigation .navigation-items li {
+      margin: 5px 0;
+  }
+
+  .header-content h1 {
+      font-size: 2em;
+  }
+
+  .header-content p {
+      font-size: 1em;
+  }
+}
+
+.input:hover {
+  transition: 0.2s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+
+.footer-volunteerpage {
+  background: #241571;
+  color: #fff;
+  padding: 20px 80px;
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-volunteerpage .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-volunteerpage .item {
+  flex: 1;
+  text-align: center;
+  padding: 0 1em;
 }
